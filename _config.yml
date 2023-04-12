@@ -100,7 +100,7 @@ github_repo_url: https://github.com/riboseinc/
 
 exclude:
   - .git
-  - "*/.git"
+  - parent-hub/.git
   - Gemfile*
   - Makefile
   - Rakefile
