@@ -26,10 +26,11 @@ This advisory notice covers the following:
 link:/cves/CVE-2023-29479.json[download as CVE JSON 5.0^]
 
 Name:: Hang when processing certain OpenPGP messages
+Link:: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-29479[CVE-2023-29479^]
 Problem:: https://cwe.mitre.org/data/definitions/400.html[CWE-400^] Uncontrolled Resource Consumption
 Impact:: https://capec.mitre.org/data/definitions/607.html[CAPEC-607^] Obstruction
 Affected vendors:: Ribose
-Affected products:: RNP, from versions 0.16.1 through 0.16.2
+Affected products:: https://www.rnpgp.org[RNP^], from versions 0.16.1 through 0.16.2
 
 === Vulnerability details
 
@@ -39,10 +40,10 @@ PKESK/SKESK packets causing the library to hang.
 
 === Additional details
 
-Upgrading to RNP 0.16.3 fixes this issue.
+Upgrading to https://www.rnpgp.org[RNP^] 0.16.3 fixes this issue.
 
-Affected versions are used by Thunderbird up to version 102.9.1, which would
-cause the Thunderbird user interface to hang.
+Affected versions are used by https://www.thunderbird.net[Thunderbird^] up to
+version 102.9.1, which would cause the Thunderbird user interface to hang.
 
 
 === Credits
@@ -57,10 +58,11 @@ cause the Thunderbird user interface to hang.
 link:/cves/CVE-2023-29480.json[download as CVE JSON 5.0^]
 
 Name:: Secret keys remain unlocked after usage in certain cases
+Link:: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-29480[CVE-2023-29480^]
 Problem:: https://cwe.mitre.org/data/definitions/922.html[CWE-922^] Insecure Storage of Sensitive Information
 Impact:: https://capec.mitre.org/data/definitions/37.html[CAPEC-37^] Retrieve Embedded Sensitive Data
 Affected vendors:: Ribose
-Affected products:: RNP, from versions 0.16.1 through 0.16.2
+Affected products:: https://www.rnpgp.org[RNP^], from versions 0.16.1 through 0.16.2
 
 === Vulnerability details
 
@@ -71,7 +73,7 @@ keys.
 
 === Additional details
 
-Upgrading to RNP 0.16.3 fixes this issue.
+Upgrading to https://www.rnpgp.org[RNP^] 0.16.3 fixes this issue.
 
 === Credits
 

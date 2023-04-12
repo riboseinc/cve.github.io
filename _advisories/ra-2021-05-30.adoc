@@ -30,7 +30,7 @@ link:/cves/CVE-2021-33589.json[download as CVE JSON 5.0^]
 
 Name:: Key protection settings not copied after unprotect action
 Affected vendors:: Ribose
-Affected products:: RNP, versions prior to 0.15.1
+Affected products:: https://www.rnpgp.org[RNP^], versions prior to 0.15.1
 
 === Abstract
 
@@ -45,8 +45,8 @@ where it was found that a key decrypted through `rnp_key_unprotect`
 will remain unprotected after after a subsequent call of
 `rnp_key_protect`.
 
-This issue was the cause of https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-29956[CVE-2021-29956]
-which is described in https://bugzilla.mozilla.org/show_bug.cgi?id=1710290#c0[Bugzilla Bug 1710290].
+This issue was the cause of https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-29956[CVE-2021-29956^]
+which is described in https://bugzilla.mozilla.org/show_bug.cgi?id=1710290#c0[Bugzilla Bug 1710290^].
 
 In RNP versions prior to 0.15.1, calling `rnp_key_protect` on a
 key that was "`unprotected`" by `rnp_key_unprotect` will not result
@@ -68,16 +68,16 @@ This would not happen if the key underwent `rnp_key_unlock`, then
 
 === Additional details
 
-From RNP 0.15.1 and onwards `rnp_key_protect` implements re-protection
+From https://www.rnpgp.org[RNP^] 0.15.1 and onwards `rnp_key_protect` implements re-protection
 for keys that have been "`unprotected`" by `rnp_key_unprotect`.
 
-Upgrading to RNP 0.15.1 fixes this issue. If unprotected keys have
-been saved outside of RNP, a re-protection step needs to apply.
+Upgrading to https://www.rnpgp.org[RNP^] 0.15.1 fixes this issue. If unprotected keys have
+been saved outside of https://www.rnpgp.org[RNP^], a re-protection step needs to apply.
 
-For Thunderbird users, auto-re-protection has been implemented in the
-latest release. Please refer to https://bugzilla.mozilla.org/show_bug.cgi?id=1710290#c0[Bugzilla Bug 1710290]
+For https://www.thunderbird.net[Thunderbird^] users, auto-re-protection has been implemented in the
+latest release. Please refer to https://bugzilla.mozilla.org/show_bug.cgi?id=1710290#c0[Bugzilla Bug 1710290^]
 for more details.
 
 === Credits
 
-- Kai Engert (Mozilla) and Thunderbird users.
+- Kai Engert (https://www.mozilla.org[Mozilla^]) and Thunderbird users.
