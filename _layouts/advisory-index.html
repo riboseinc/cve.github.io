@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-{% assign advisories = site.advisories %}
+{% assign advisories = site.advisories | reverse %}
 
 <section class="items">
   {% if site.is_hub %}

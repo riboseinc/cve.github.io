@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "RA-2023-04-11: Security vulnerabilities fixed in RNP 0.16.3"
-date:   2023-04-11 00:00:00 +0000
+date: 2023-04-11
 categories: advisory
 id: RA-2023-04-11
 cve_id: CVE-2021-33589
