@@ -1,0 +1,82 @@
+---
+layout: post
+title:  "Advisory 2023-04-11"
+date:   2023-04-11 00:00:00 +0000
+categories: advisory
+id: RA-2023-04-11
+excerpt: >-
+  This advisory notice covers the following: RI-2023-001 (CVE-2023-29479) and
+  RI-2023-002 (CVE-2023-29480).
+---
+= Advisory 2023-04-11 (RA-2023-04-11)
+
+This advisory notice covers the following: <<RI-2023-001,RI-2023-001 (CVE-2023-29479)>> and
+<<RI-2023-002,RI-2023-002 (CVE-2023-29480)>>.
+
+[[RI-2023-001]]
+== RI-2023-001: Hang when processing certain OpenPGP messages
+
+=== Metadata
+
+CNA ID:: RI-2023-001
+Name:: Hang when processing certain OpenPGP messages
+CVE ID:: CVE-2023-29479
+Problem:: https://cwe.mitre.org/data/definitions/CWE-400[CWE-400^] Uncontrolled Resource Consumption
+Impact:: https://capec.mitre.org/data/definitions/CAPEC-607[CAPEC-607^] Obstruction
+CVSS 3.1 score:: 5.9
+CVSS 3.1 vector:: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
+Affected vendors:: Ribose
+Affected products:: RNP, from versions 0.16.1 through 0.16.2
+
+
+=== Vulnerability details
+
+Certain malformed OpenPGP messages could trigger incorrect parsing of
+PKESK/SKESK packets due to a bug in the Ribose RNP library used by Thunderbird
+up to version 102.9.1, which would cause the Thunderbird user interface to
+hang.
+
+
+=== Additional details
+
+Upgrading to RNP 0.16.3 fixes this issue.
+
+
+=== Credits
+
+- Ribose RNP Team (finder)
+- https://google.github.io/oss-fuzz/[oss-fuzz^] (tool)
+
+
+[[RI-2023-002]]
+== RI-2023-002: In some cases, secret keys remain unlocked after use
+
+=== Metadata
+
+CNA ID:: RI-2023-002
+Name:: In some cases, secret keys remain unlocked after use
+CVE ID:: CVE-2023-29480
+Problem:: https://cwe.mitre.org/data/definitions/CWE-312[CWE-312^] Cleartext Storage of Sensitive Information
+Impact:: https://capec.mitre.org/data/definitions/CAPEC-37[CAPEC-37^] Retrieve Embedded Sensitive Data
+CVSS 3.1 score:: 5.0
+CVSS 3.1 vector:: CVSS:3.1/AV:L/AC:H/PR:H/UI:R/S:C/C:H/I:N/A:N
+Affected vendors:: Ribose
+Affected products:: RNP, from versions 0.16.1 through 0.16.2
+
+
+=== Vulnerability details
+
+There is an unnamed KeyLocker that doesn't lock the key because it's
+immediately destroyed again, causing secret keys to remain unlocked in certain
+cases.
+
+
+=== Additional details
+
+Upgrading to RNP 0.16.3 fixes this issue.
+
+
+=== Credits
+
+- Falko Strenzke (https://github.com/falko-strenzke[@falko-strenzke^])
+  (reporter)
