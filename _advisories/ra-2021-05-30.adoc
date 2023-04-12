@@ -76,6 +76,6 @@ For Thunderbird users, auto-re-protection has been implemented in the
 latest release. Please refer to https://bugzilla.mozilla.org/show_bug.cgi?id=1710290#c0[Bugzilla Bug 1710290]
 for more details.
 
-=== Credit
+=== Credits
 
-Kai Engert (Mozilla) and Thunderbird users.
+- Kai Engert (Mozilla) and Thunderbird users.
