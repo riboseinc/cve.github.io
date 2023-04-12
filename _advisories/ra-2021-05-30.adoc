@@ -26,6 +26,8 @@ This advisory notice covers the following:
 [[CVE-2021-33589]]
 == CVE-2021-33589
 
+link:/cves/CVE-2021-33589.json[download as CVE JSON 5.0^]
+
 Name:: Key protection settings not copied after unprotect action
 Affected vendors:: Ribose
 Affected products:: RNP, versions prior to 0.15.1

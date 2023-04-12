@@ -23,6 +23,8 @@ This advisory notice covers the following:
 [[CVE-2023-29479]]
 == CVE-2023-29479
 
+link:/cves/CVE-2023-29479.json[download as CVE JSON 5.0^]
+
 Name:: Hang when processing certain OpenPGP messages
 Problem:: https://cwe.mitre.org/data/definitions/400.html[CWE-400^] Uncontrolled Resource Consumption
 Impact:: https://capec.mitre.org/data/definitions/607.html[CAPEC-607^] Obstruction
@@ -51,6 +53,8 @@ cause the Thunderbird user interface to hang.
 
 [[CVE-2023-29480]]
 == CVE-2023-29480
+
+link:/cves/CVE-2023-29480.json[download as CVE JSON 5.0^]
 
 Name:: Secret keys remain unlocked after usage in certain cases
 Problem:: https://cwe.mitre.org/data/definitions/922.html[CWE-922^] Insecure Storage of Sensitive Information
