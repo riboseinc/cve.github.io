@@ -24,8 +24,8 @@ This advisory notice covers the following:
 == CVE-2023-29479
 
 Name:: Hang when processing certain OpenPGP messages
-Problem:: https://cwe.mitre.org/data/definitions/CWE-400[CWE-400^] Uncontrolled Resource Consumption
-Impact:: https://capec.mitre.org/data/definitions/CAPEC-607[CAPEC-607^] Obstruction
+Problem:: https://cwe.mitre.org/data/definitions/400.html[CWE-400^] Uncontrolled Resource Consumption
+Impact:: https://capec.mitre.org/data/definitions/607.html[CAPEC-607^] Obstruction
 Affected vendors:: Ribose
 Affected products:: RNP, from versions 0.16.1 through 0.16.2
 
@@ -53,8 +53,8 @@ cause the Thunderbird user interface to hang.
 == CVE-2023-29480
 
 Name:: Secret keys remain unlocked after usage in certain cases
-Problem:: https://cwe.mitre.org/data/definitions/CWE-922[CWE-922^] Insecure Storage of Sensitive Information
-Impact:: https://capec.mitre.org/data/definitions/CAPEC-37[CAPEC-37^] Retrieve Embedded Sensitive Data
+Problem:: https://cwe.mitre.org/data/definitions/922.html[CWE-922^] Insecure Storage of Sensitive Information
+Impact:: https://capec.mitre.org/data/definitions/37.html[CAPEC-37^] Retrieve Embedded Sensitive Data
 Affected vendors:: Ribose
 Affected products:: RNP, from versions 0.16.1 through 0.16.2
 
