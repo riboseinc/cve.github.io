@@ -94,9 +94,9 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
 
-url: https://www.rnpgp.org
+url: https://cve.ribose.com
 
-github_repo_url: https://github.com/rnpgp/rnpgp.org
+github_repo_url: https://github.com/riboseinc/
 
 exclude:
   - .git
