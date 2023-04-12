@@ -43,7 +43,6 @@ legal:
 
 home_calls_to_action:
   - { url: "/advisories/", title: "Advisories" }
-  - { url: "/contribute/", title: "Contribute" }
 
 collections:
   projects:
