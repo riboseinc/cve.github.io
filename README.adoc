@@ -1,4 +1,8 @@
-= Ribose CNA site
+= DEPRECATED (was: Ribose CNA site)
+
+UPDATE: Site content has been merged into to
+https://github.com/riboseinc/open.ribose.com[^]
+(https://open.ribose.com/advisories[^])
 
 == Introduction
 
@@ -18,4 +22,3 @@ in _site.
 === Serving site preview
 
 * Run `jekyll serve` from within site directory
-
