@@ -23,7 +23,7 @@ authors:
 
 contact_email: security.team@ribose.com
 
-theme: jekyll-theme-open-project
+theme: jekyll-theme-rop
 
 parent_hub:
   git_repo_url: https://github.com/riboseinc/open.ribose.com
