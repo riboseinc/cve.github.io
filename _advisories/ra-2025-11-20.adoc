@@ -1,0 +1,193 @@
+---
+layout: post
+title:  "RA-2025-11-20: Security vulnerability fixed in RNP 0.18.1"
+date: 2025-11-20
+categories: advisory
+id: RA-2025-11-20
+cve_id: CVE-2025-13470
+excerpt: >-
+  This advisory notice covers CVE-2025-13470 affecting RNP version 0.18.0.
+---
+= RA-2025-11-20: Security vulnerability fixed in RNP 0.18.1
+
+== Metadata
+
+ID:: RA-2025-11-20
+
+This advisory notice covers the following:
+
+* <<CVE-2025-13470>>
+
+
+[[CVE-2025-13470]]
+== CVE-2025-13470
+
+Name:: Use of Insufficiently Random Values in Session Key Generation for PKESK
+Link:: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-13470[CVE-2025-13470]
+Problem:: https://cwe.mitre.org/data/definitions/CWE-330[CWE-330^] Use of Insufficiently Random Values
+CVSS Score:: 7.5 (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N)
+Severity:: High
+Affected vendors:: Ribose
+Affected products:: https://www.rnpgp.org[RNP], version 0.18.0 ONLY
+
+=== Summary
+
+RNP version 0.18.0 contains a vulnerability in session key generation for
+PKESK (Public Key Encrypted Session Key) packets. Session keys are generated
+without cryptographically random values.
+
+**Users of RNP 0.18.0 should upgrade to version 0.18.1 or use version 0.17.1.**
+
+
+=== Vulnerability details
+
+During refactoring, the session key initialization for SKESK (passphrase-based
+encryption) was correctly updated. However, the corresponding initialization for
+PKESK (public key encryption) was not implemented, resulting in vulnerable
+session keys.
+
+The vulnerability affects only public key encryption (PKESK packets).
+Passphrase-based encryption (SKESK packets) is not affected.
+
+
+=== Technical impact
+
+Messages encrypted with RNP 0.18.0 using public key encryption use vulnerable
+session key values. This is a confidentiality issue for PKESK-encrypted data.
+
+**Encryption types affected:**
+
+* Public key encryption (PKESK) - **AFFECTED**
+* Passphrase-based encryption (SKESK) - **NOT AFFECTED**
+
+
+=== Security impact
+
+Messages encrypted with RNP 0.18.0 using public key encryption use vulnerable
+session key values. This is a confidentiality issue for PKESK-encrypted data.
+
+
+=== Affected versions
+
+* **AFFECTED:** RNP version 0.18.0 ONLY
+* **NOT AFFECTED:** RNP version 0.17.1 and all earlier versions
+* **NOT AFFECTED:** https://www.thunderbird.net[Thunderbird] (all versions) - uses bundled RNP 0.17.1
+* **Fixed in:** RNP version 0.18.1 and later
+
+
+=== Who is affected
+
+==== Affected users
+
+**ONLY users who installed RNP v0.18.0, including:**
+
+* Direct installation from source
+* Installation via Linux distributions that packaged v0.18.0:
+** Debian 14, unstable
+** Devuan unstable
+** EPEL 8
+** EPEL 9
+** EPEL 10
+** Exherbo
+** Fedora 41
+** Fedora 42
+** Fedora 43
+** Fedora Rawhide
+** FreeBSD Ports
+** Homebrew
+** Kali Linux Rolling
+** nixpkgs unstable
+** OpenBSD Ports
+** openmamba
+** openSUSE Tumbleweed
+
+RNP 0.17.1 and earlier versions are NOT affected by this vulnerability.
+
+==== Not affected
+
+* **RNP 0.17.1 and earlier versions** - This vulnerability was introduced in
+  version 0.18.0 only. Users of 0.17.1 are not affected.
+
+* **Thunderbird users** - **Thunderbird is NOT AFFECTED.** Thunderbird uses
+  bundled RNP version 0.17.1 and does not utilize system-installed RNP
+  libraries. Since Thunderbird uses version 0.17.1, which is not affected by
+  this vulnerability, all Thunderbird users are unaffected regardless of the
+  system RNP version.
+
+* **Users who have already upgraded to RNP 0.18.1 or later**
+
+
+=== Solution
+
+==== Recommended action
+
+**Option 1 (Recommended):** Upgrade to RNP 0.18.1 when available.
+
+**Option 2 (Interim):** Use RNP 0.17.1 until 0.18.1 is available.
+
+**Via package managers:**
+
+Check your distribution's package repositories for updated packages. If
+RNP 0.18.1 is not yet available, version 0.17.1 may be used as an interim
+solution.
+
+==== Data handling recommendations
+
+Users who encrypted sensitive data using RNP 0.18.0 should consider
+re-encrypting that data with RNP 0.18.1 or 0.17.1 based on their security
+requirements and threat model.
+
+
+=== Timeline
+
+* 2025-06-19: RNP 0.18.0 released (vulnerability introduced)
+* 2025-11-07: Vulnerability discovered and reported by Johannes Roth (MTG AG)
+* 2025-11-19: CVE-2025-13402 assigned by Red Hat
+* 2025-11-20: CVE-2025-13470 assigned by Ribose/MITRE
+* 2025-11-20: Fix developed and tested
+* 2025-11-21: Planned release date for RNP 0.18.1
+* 2025-11-21: Public disclosure (same day as release)
+
+
+=== References
+
+* **CVE:** https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-13470[CVE-2025-13470]
+* **Red Hat CVE:** https://access.redhat.com/security/cve/cve-2025-13402
+* **Red Hat Bugzilla:** https://bugzilla.redhat.com/show_bug.cgi?id=2415863
+* **Red Hat CSAF:** https://security.access.redhat.com/data/csaf/v2/vex/2025/cve-2025-13402.json
+* **Ribose CNA Advisory:** https://cve.ribose.com/advisories/ra-2025-11-20/
+* **GitHub Release:** https://github.com/rnpgp/rnp/releases/tag/v0.18.1
+
+
+=== Frequently asked questions
+
+==== Is Thunderbird affected?
+
+No. Thunderbird uses bundled RNP version 0.17.1, which is not affected by
+this vulnerability. Thunderbird does not use system-installed RNP libraries.
+
+==== Is RNP 0.17.1 affected?
+
+No. Only version 0.18.0 is affected. RNP 0.17.1 and all earlier versions
+are not affected.
+
+==== Can I use RNP 0.17.1?
+
+Yes. Version 0.17.1 is a suitable interim solution until 0.18.1 is available.
+
+==== What about data I encrypted with 0.18.0?
+
+Users should evaluate their security requirements and consider re-encrypting
+sensitive data using version 0.18.1 or 0.17.1.
+
+
+=== Credits
+
+This vulnerability was discovered and reported by **Johannes Roth** of **MTG AG**.
+
+
+=== Contact
+
+For questions or coordination: open.source@ribose.com
+
+For general questions about RNP: https://github.com/rnpgp/rnp
