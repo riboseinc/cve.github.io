@@ -21,29 +21,35 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+
   build:
     runs-on: ubuntu-latest
     environment:
       name: production
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.3'
           bundler-cache: true
-
-      - name: Checkout
-        uses: actions/checkout@v4
+          cache-version: 0 # Increment this number if you need to re-download cached gems
 
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
 
       - name: Build with Jekyll
-        run: |
-          make _site
+        # Outputs to the './_site' directory by default
+        run: bundle exec jekyll build --verbose --trace --baseurl "${{ steps.pages.outputs.base_path }}"
+        env:
+          JEKYLL_ENV: production
+          JEKYLL_LOG_LEVEL: debug
 
       - name: Upload artifact
+        # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v4
 
   # Deployment job
