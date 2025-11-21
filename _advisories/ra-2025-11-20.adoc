@@ -90,7 +90,8 @@ ldd $(which thunderbird) | grep librnp
 
 If this shows a system path (e.g., `/usr/lib/librnp.so`), check your RNP
 version with `pkg-config --modversion librnp`. If no output or the library is
-in Thunderbird's directory, it uses bundled RNP.
+in Thunderbird's directory, it uses the Thunderbird-bundled RNP, which is not
+affected.
 
 Users who encrypted sensitive data using RNP 0.18.0 (standalone or via
 Thunderbird with system RNP 0.18.0) should consider re-encrypting that data
