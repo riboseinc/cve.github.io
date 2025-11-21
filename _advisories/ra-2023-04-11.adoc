@@ -1,5 +1,6 @@
 ---
-layout: post
+layout: redirect
+redirect_to: "https://open.ribose.com/advisories/ra-2023-04-11"
 title:  "RA-2023-04-11: Security vulnerabilities fixed in RNP 0.16.3"
 date: 2023-04-11
 categories: advisory

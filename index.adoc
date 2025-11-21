@@ -1,4 +1,4 @@
 ---
-layout: home
-hero_include: home-hero.html
+layout: redirect
+redirect_to: https://open.ribose.com/advisories
 ---
