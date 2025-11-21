@@ -1,5 +1,6 @@
 ---
-layout: default
+layout: redirect
+redirect_to: https://open.ribose.com/feedback/
 title: Feedback and security reports
 permalink: /feedback/
 bodyClass: page

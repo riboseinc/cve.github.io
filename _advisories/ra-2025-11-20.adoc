@@ -1,5 +1,6 @@
 ---
-layout: post
+layout: redirect
+redirect_to: "https://open.ribose.com/advisories/ra-2025-11-20"
 title:  "RA-2025-11-20: Security vulnerability fixed in RNP 0.18.1"
 date: 2025-11-20
 categories: advisory
