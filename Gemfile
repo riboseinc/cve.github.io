@@ -41,4 +41,7 @@ gem "wdm", "~> 0.1.0" if Gem.win_platform?
 gem "rake"
 gem "html-proofer"
 
+# For OSV JSON schema validation of generated vulnerability feeds
+gem "json_schemer"
+
 gem "webrick", "~> 1.7"
