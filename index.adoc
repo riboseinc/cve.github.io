@@ -1,4 +1,19 @@
 ---
-layout: redirect
-redirect_to: https://open.ribose.com/advisories
+layout: home
+hero_include: home-hero.html
 ---
+
+= Ribose CVE Naming Authority
+
+Ribose publishes security advisories and machine-readable vulnerability feeds for tracked Ribose software packages.
+
+== Machine-readable vulnerability feeds
+
+Per-package Open Source Vulnerability (OSV) and GitHub Security Advisory (GHSA) JSON feeds are published for Tier A packages:
+
+* link:/feeds/osv/index.json[OSV feed index]
+* link:/feeds/osv/rnp.json[RNP (`rnpgp/rnp`) OSV feed]
+* link:/feeds/osv/metanorma.json[Metanorma (`metanorma/metanorma`) OSV feed]
+* link:/feeds/osv/cla.json[CLA (`riboseinc/cla`) OSV feed]
+* link:/feeds/osv/identity.json[Identity (`ribosei/identity`) OSV feed]
+* link:/feeds/ghsa/index.json[GHSA feed index]
