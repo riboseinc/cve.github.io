@@ -3,7 +3,7 @@ SHELL := /bin/bash
 all: _site
 
 clean:
-	rm -rf _site _concepts feeds
+	rm -rf _site feeds
 
 feeds: | bundle
 	bundle exec ruby scripts/generate_feeds.rb
@@ -15,19 +15,13 @@ validate-feeds: | bundle
 test: feeds
 	bundle exec ruby test/test_feeds.rb
 
-_site: feeds | bundle
-	bundle exec jekyll build
+_site: feeds
+	rm -rf _site
+	mkdir -p _site
+	cp index.html _site/index.html
+	cp -R feeds _site/feeds
 
 bundle:
-	bundle
+	bundle install
 
-serve: feeds
-	bundle exec jekyll serve
-
-update-init:
-	git submodule update --init
-
-update-modules:
-	git submodule foreach git pull origin master
-
-.PHONY: bundle all open serve clean feeds validate-feeds test update-init update-modules
+.PHONY: bundle all clean feeds validate-feeds test _site
