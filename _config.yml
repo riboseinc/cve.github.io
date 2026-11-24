@@ -105,4 +105,7 @@ exclude:
   - Makefile
   - Rakefile
   - README.adoc
+  - schemas
+  - scripts
+  - test
   - vendor # for deployment

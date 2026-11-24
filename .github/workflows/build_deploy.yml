@@ -40,12 +40,30 @@ jobs:
         id: pages
         uses: actions/configure-pages@v5
 
+      - name: Generate OSV and GHSA feeds
+        run: bundle exec ruby scripts/generate_feeds.rb
+
+      - name: Validate OSV and GHSA feeds
+        run: bundle exec ruby scripts/validate_feeds.rb
+
+      - name: Test feed generation and validation
+        run: bundle exec ruby test/test_feeds.rb
+
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
         run: bundle exec jekyll build --verbose --trace --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
           JEKYLL_LOG_LEVEL: debug
+
+      - name: Verify published feed endpoints in _site
+        run: |
+          test -f _site/feeds/osv/index.json
+          test -f _site/feeds/ghsa/index.json
+          for pkg in rnp metanorma cla identity; do
+            test -f "_site/feeds/osv/${pkg}.json"
+            test -f "_site/feeds/ghsa/${pkg}.json"
+          done
 
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
