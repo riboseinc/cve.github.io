@@ -1,0 +1,77 @@
+name: build_deploy
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  repository_dispatch:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+          bundler-cache: true
+          cache-version: 1
+
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
+
+      - name: Generate OSV and GHSA feeds
+        run: bundle exec ruby scripts/generate_feeds.rb
+
+      - name: Validate OSV and GHSA feeds
+        run: bundle exec ruby scripts/validate_feeds.rb
+
+      - name: Test feed generation and validation
+        run: bundle exec ruby test/test_feeds.rb
+
+      - name: Build static site
+        run: |
+          rm -rf _site
+          mkdir -p _site
+          cp index.html _site/index.html
+          cp -R feeds _site/feeds
+
+      - name: Verify published feed endpoints in _site
+        run: |
+          test -f _site/index.html
+          test -f _site/feeds/osv/index.json
+          test -f _site/feeds/ghsa/index.json
+          for pkg in rnp metanorma cla identity; do
+            test -f "_site/feeds/osv/${pkg}.json"
+            test -f "_site/feeds/ghsa/${pkg}.json"
+          done
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v4
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    if: ${{ github.ref == 'refs/heads/main' }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
