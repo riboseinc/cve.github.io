@@ -1,6 +1,6 @@
 # cve.ribose.com
 
-This repository publishes machine-readable Open Source Vulnerability (OSV) and GitHub Security Advisory (GHSA) JSON feeds for tracked Ribose packages on `https://cve.ribose.com`.
+This repository publishes machine-readable Open Source Vulnerability (OSV), GitHub Security Advisory (GHSA), Common Security Advisory Framework (CSAF 2.0), and OpenVEX JSON feeds for tracked Ribose packages on `https://cve.ribose.com`.
 
 ## Sources
 
@@ -15,6 +15,12 @@ This repository publishes machine-readable Open Source Vulnerability (OSV) and G
 - `/feeds/osv/<CVE-ID>.json`: Individual OSV-schema vulnerability records.
 - `/feeds/ghsa/index.json`: GHSA feed index.
 - `/feeds/ghsa/<package>.json`: Per-package GHSA feed (`rnp`, `metanorma`, `cla`, `identity`).
+- `/feeds/csaf/index.json`: CSAF 2.0 feed index keyed by package and PURL.
+- `/feeds/csaf/<package>.json`: Per-package CSAF 2.0 `csaf_vex` document (`rnp`, `metanorma`, `cla`, `identity`).
+- `/feeds/csaf/<CVE-ID>.json`: Individual CSAF 2.0 `csaf_vex` documents.
+- `/feeds/vex/index.json`: OpenVEX 0.2.0 feed index keyed by package and PURL.
+- `/feeds/vex/<package>.json`: Per-package OpenVEX 0.2.0 feed (`rnp`, `metanorma`, `cla`, `identity`).
+- `/feeds/vex/<CVE-ID>.json`: Individual OpenVEX 0.2.0 documents.
 
 ## Build and validation
 
@@ -24,4 +30,4 @@ make test
 make _site
 ```
 
-Every generated OSV record is validated against the vendored OSV JSON Schema (`schemas/osv-schema.json`) before publication.
+Every generated OSV, CSAF 2.0, and OpenVEX 0.2.0 record is validated against the vendored JSON Schemas (`schemas/osv-schema.json`, `schemas/csaf-2.0-schema.json`, and `schemas/openvex-0.2.0-schema.json`) before publication.

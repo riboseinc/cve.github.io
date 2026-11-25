@@ -16,6 +16,8 @@ packages:
       - https://github.com/rnpgp/rnp
     osv_feed_path: /feeds/osv/rnp.json
     ghsa_feed_path: /feeds/ghsa/rnp.json
+    csaf_feed_path: /feeds/csaf/rnp.json
+    vex_feed_path: /feeds/vex/rnp.json
 
   - repo: metanorma/metanorma
     org: metanorma
@@ -32,6 +34,8 @@ packages:
       - https://github.com/metanorma/metanorma
     osv_feed_path: /feeds/osv/metanorma.json
     ghsa_feed_path: /feeds/ghsa/metanorma.json
+    csaf_feed_path: /feeds/csaf/metanorma.json
+    vex_feed_path: /feeds/vex/metanorma.json
 
   - repo: riboseinc/cla
     org: riboseinc
@@ -48,6 +52,8 @@ packages:
       - https://github.com/riboseinc/cla
     osv_feed_path: /feeds/osv/cla.json
     ghsa_feed_path: /feeds/ghsa/cla.json
+    csaf_feed_path: /feeds/csaf/cla.json
+    vex_feed_path: /feeds/vex/cla.json
 
   - repo: ribosei/identity
     org: ribosei
@@ -63,3 +69,5 @@ packages:
       - https://github.com/ribosei/identity
     osv_feed_path: /feeds/osv/identity.json
     ghsa_feed_path: /feeds/ghsa/identity.json
+    csaf_feed_path: /feeds/csaf/identity.json
+    vex_feed_path: /feeds/vex/identity.json
