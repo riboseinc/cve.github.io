@@ -39,12 +39,14 @@
 </head>
 <body>
   <h1>Ribose Vulnerability Feeds</h1>
-  <p>This site publishes machine-readable Open Source Vulnerability (OSV) and GitHub Security Advisory (GHSA) JSON feeds for tracked Ribose software packages.</p>
+  <p>This site publishes machine-readable Open Source Vulnerability (OSV), GitHub Security Advisory (GHSA), Common Security Advisory Framework (CSAF 2.0), and OpenVEX JSON feeds for tracked Ribose software packages.</p>
 
   <h2>Index endpoints</h2>
   <ul>
     <li><a href="/feeds/osv/index.json"><code>/feeds/osv/index.json</code></a> — OSV index keyed by package and PURL.</li>
     <li><a href="/feeds/ghsa/index.json"><code>/feeds/ghsa/index.json</code></a> — GHSA index for tracked packages.</li>
+    <li><a href="/feeds/csaf/index.json"><code>/feeds/csaf/index.json</code></a> — CSAF 2.0 index keyed by package and PURL.</li>
+    <li><a href="/feeds/vex/index.json"><code>/feeds/vex/index.json</code></a> — OpenVEX 0.2.0 index keyed by package and PURL.</li>
   </ul>
 
   <h2>Tier A per-package OSV feeds</h2>
@@ -61,6 +63,22 @@
     <li><a href="/feeds/ghsa/metanorma.json"><code>/feeds/ghsa/metanorma.json</code></a> — <code>metanorma/metanorma</code></li>
     <li><a href="/feeds/ghsa/cla.json"><code>/feeds/ghsa/cla.json</code></a> — <code>riboseinc/cla</code></li>
     <li><a href="/feeds/ghsa/identity.json"><code>/feeds/ghsa/identity.json</code></a> — <code>ribosei/identity</code></li>
+  </ul>
+
+  <h2>Tier A per-package CSAF 2.0 feeds</h2>
+  <ul>
+    <li><a href="/feeds/csaf/rnp.json"><code>/feeds/csaf/rnp.json</code></a> — <code>rnpgp/rnp</code> (<code>pkg:github/rnpgp/rnp</code>)</li>
+    <li><a href="/feeds/csaf/metanorma.json"><code>/feeds/csaf/metanorma.json</code></a> — <code>metanorma/metanorma</code> (<code>pkg:gem/metanorma</code>)</li>
+    <li><a href="/feeds/csaf/cla.json"><code>/feeds/csaf/cla.json</code></a> — <code>riboseinc/cla</code> (<code>pkg:github/riboseinc/cla</code>)</li>
+    <li><a href="/feeds/csaf/identity.json"><code>/feeds/csaf/identity.json</code></a> — <code>ribosei/identity</code> (<code>pkg:github/ribosei/identity</code>)</li>
+  </ul>
+
+  <h2>Tier A per-package OpenVEX feeds</h2>
+  <ul>
+    <li><a href="/feeds/vex/rnp.json"><code>/feeds/vex/rnp.json</code></a> — <code>rnpgp/rnp</code> (<code>pkg:github/rnpgp/rnp</code>)</li>
+    <li><a href="/feeds/vex/metanorma.json"><code>/feeds/vex/metanorma.json</code></a> — <code>metanorma/metanorma</code> (<code>pkg:gem/metanorma</code>)</li>
+    <li><a href="/feeds/vex/cla.json"><code>/feeds/vex/cla.json</code></a> — <code>riboseinc/cla</code> (<code>pkg:github/riboseinc/cla</code>)</li>
+    <li><a href="/feeds/vex/identity.json"><code>/feeds/vex/identity.json</code></a> — <code>ribosei/identity</code> (<code>pkg:github/ribosei/identity</code>)</li>
   </ul>
 </body>
 </html>

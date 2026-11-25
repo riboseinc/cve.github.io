@@ -35,10 +35,10 @@ jobs:
         id: pages
         uses: actions/configure-pages@v5
 
-      - name: Generate OSV and GHSA feeds
+      - name: Generate OSV, GHSA, CSAF, and OpenVEX feeds
         run: bundle exec ruby scripts/generate_feeds.rb
 
-      - name: Validate OSV and GHSA feeds
+      - name: Validate OSV, GHSA, CSAF, and OpenVEX feeds
         run: bundle exec ruby scripts/validate_feeds.rb
 
       - name: Test feed generation and validation
@@ -56,9 +56,13 @@ jobs:
           test -f _site/index.html
           test -f _site/feeds/osv/index.json
           test -f _site/feeds/ghsa/index.json
+          test -f _site/feeds/csaf/index.json
+          test -f _site/feeds/vex/index.json
           for pkg in rnp metanorma cla identity; do
             test -f "_site/feeds/osv/${pkg}.json"
             test -f "_site/feeds/ghsa/${pkg}.json"
+            test -f "_site/feeds/csaf/${pkg}.json"
+            test -f "_site/feeds/vex/${pkg}.json"
           done
 
       - name: Upload artifact
